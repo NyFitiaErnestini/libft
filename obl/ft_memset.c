@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 13:02:39 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 14:03:52 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:14:54 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memset(void *s, int c, unsigned int n)
 		str[i] = (unsigned char)c;
 		i++;
 	}
-	return (str);	
+	return (str);
 }

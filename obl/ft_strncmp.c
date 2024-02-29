@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:54:21 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 09:19:02 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:09:40 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strncmp(char const *s1, char const *s2, unsigned int n)
 	f = (unsigned char *)s1;
 	c = (unsigned char *)s2;
 	if ((!f[i] || !c[i]) && (n != 0))
-		return (f[i] - c[i]);	
+		return (f[i] - c[i]);
 	while (i < n && (f[i] || c[i]))
 	{
 		if (f[i] != c[i])

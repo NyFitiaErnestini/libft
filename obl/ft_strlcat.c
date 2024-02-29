@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:02:37 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 10:46:12 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:27:11 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,19 @@ int	ft_strlcat(char *dest, char *src, unsigned int size)
 	j = 0;
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
-	k = size - len_dest - 1;
+	k = size - len_dest -1;
 	if (size > len_dest)
 	{
 		while (dest[i] != '\0')
 			i++;
 		while (src[j] && (k > j))
-		{
-			dest[i] = src[j];
-			i++;
-			j++;
-		}
+			dest[i++] = src[j++];
 		dest[i] = '\0';
 		return (len_dest + len_src);
 	}
 	if (size == 0)
 		return (len_src);
-	else if (size < len_dest)
+	else if (size <= len_dest)
 		return (len_src + size);
 	return (0);
 }

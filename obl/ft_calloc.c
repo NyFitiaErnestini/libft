@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:28:00 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 14:29:41 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:05:24 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int		i;
-	char	*s;
+	unsigned int	i;
+	char			*s;
 
 	i = 0;
 	s = (char *)malloc(size * nmemb);

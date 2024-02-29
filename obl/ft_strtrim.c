@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 13:19:17 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 16:05:56 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:07:05 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ static int	ft_istrim(char const *set, char x)
 	}
 	return (0);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	x;
-	int	len_s1;
+	int		i;
+	int		x;
+	int		len_s1;
 	char	*res;
 
 	i = 0;
@@ -39,12 +40,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i])
 	{
 		if (!ft_istrim(set, s1[i]))
-			break;
+			break ;
 		i++;
 	}
 	x = len_s1 - 1;
 	while (ft_istrim(set, s1[x]))
-			x--;
+		x--;
 	res = ft_substr(s1, i, (x - i + 1));
 	if (!res)
 		return (ft_strdup(""));

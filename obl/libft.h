@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:16:03 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 16:25:47 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:02:27 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		*ft_memchr(const void *s, int c, unsigned int n);
 int			ft_memcmp(const void *s1, const void *s2, unsigned int n);
 char		*ft_strchr(char *s, char c);
 char		*ft_strdup(char *s);
-void		*ft_calloc(unsigned int nmemb,unsigned int size);
+void		*ft_calloc(unsigned int nmemb, unsigned int size);
 int			ft_atoi(char *nptr);
 int			ft_strncmp(char const *s1, char const *s2, unsigned int n);
 char		*ft_strnstr(char *src, char *dest, unsigned int len);

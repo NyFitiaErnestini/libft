@@ -6,7 +6,7 @@
 #    By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 15:26:38 by eny-fiti          #+#    #+#              #
-#    Updated: 2024/02/27 08:53:00 by eny-fiti         ###   ########.fr        #
+#    Updated: 2024/02/29 14:37:00 by eny-fiti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
        ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 
-OBJS =	${SRCS:.c=.o}
+
+ALL_SRCS = ${SRCS}
+
+OBJS =	${ALL_SRCS:.c=.o}
 
 CC = cc
 

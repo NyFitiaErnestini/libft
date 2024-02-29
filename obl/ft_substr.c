@@ -6,7 +6,7 @@
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:15:00 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 12:17:23 by eny-fiti         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:03:49 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*res;
 	size_t	i;
 
-
-	i = 0;
-	if (start >= (unsigned int)ft_strlen((char *)s))
-		res = (char *)malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
-	else
-		res = (char *) malloc(sizeof(char) * (len + 1));
+	if (start >= (unsigned int)(ft_strlen((char *)s)))
+		len = 0;
+	if (len > start - (ft_strlen((char *)s)))
+		len = start - (ft_strlen((char *)s));
+	res = (char *) malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 		return (NULL);
+	i = 0;
 	while ((i < len) && (s[i] != '\0'))
 	{
 		res[i] = s[start];
