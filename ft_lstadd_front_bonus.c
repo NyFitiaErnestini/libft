@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 11:33:58 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/22 09:26:51 by eny-fiti         ###   ########.fr       */
+/*   Created: 2024/03/01 10:52:37 by eny-fiti          #+#    #+#             */
+/*   Updated: 2024/03/01 12:55:46 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *nptr)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-	int	signe;
-	int	j;
-
-	signe = 1;
-	i = 0;
-	j = 0;
-	while (((nptr[i] >= 9) && (nptr[i] <= 13)) || (nptr[i] == ' '))
-		i++;
-	if (nptr[i] == '-')
-	{
-		signe *= -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-	{
-		signe *= 1;
-		i++;
-	}
-	while (nptr[i] >= 48 && nptr[i] <= 57)
-	{
-		j = (j * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (j * signe);
+	new->next = *lst;
+	*lst = new;
 }

@@ -6,7 +6,7 @@
 #    By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 15:26:38 by eny-fiti          #+#    #+#              #
-#    Updated: 2024/02/29 14:37:00 by eny-fiti         ###   ########.fr        #
+#    Updated: 2024/03/01 13:21:58 by eny-fiti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,17 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
        ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c\
        ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
+OBJS =	${SRCS:.c=.o}
 
-ALL_SRCS = ${SRCS}
-
-OBJS =	${ALL_SRCS:.c=.o}
+OBJS_BONUS = ${BONUS:.c=.o}
 
 CC = cc
 
-RM = rm -f
+RM = rm -rf
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -36,15 +38,18 @@ CFLAGS = -Wall -Wextra -Werror
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:${OBJS}
-	ar rcs ${NAME} ${OBJS} 
-    
+	ar -rcs ${NAME} ${OBJS}  
+
+bonus: ${OBJS_BONUS} ${NAME}
+	ar -rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+
 all:	${NAME}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean: clean
-	${RM} ${NAME}
+	${RM} ${NAME} 
 
 re: fclean all
 

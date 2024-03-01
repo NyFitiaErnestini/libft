@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 10:15:00 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/29 15:03:49 by eny-fiti         ###   ########.fr       */
+/*   Created: 2024/03/01 11:06:28 by eny-fiti          #+#    #+#             */
+/*   Updated: 2024/03/01 16:56:18 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	char	*res;
-	size_t	i;
+	int		i;
+	t_list	*temp;
 
-	if (start >= (unsigned int)(ft_strlen((char *)s)))
-		len = 0;
-	if (len > start - (ft_strlen((char *)s)))
-		len = start - (ft_strlen((char *)s));
-	res = (char *) malloc(sizeof(char) * (len + 1));
-	if (res == NULL)
-		return (NULL);
 	i = 0;
-	while ((i < len) && (s[i] != '\0'))
+	temp = lst;
+	while (temp != NULL)
 	{
-		res[i] = s[start];
+		temp = temp->next;
 		i++;
-		start++;
 	}
-	res[i] = '\0';
-	return (res);
+	return (i);
 }

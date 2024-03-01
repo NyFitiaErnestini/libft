@@ -48,6 +48,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		x--;
 	res = ft_substr(s1, i, (x - i + 1));
 	if (!res)
-		return (ft_strdup(""));
+		return (NULL);
 	return (res);
 }

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eny-fiti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 11:10:52 by eny-fiti          #+#    #+#             */
-/*   Updated: 2024/02/28 12:03:16 by eny-fiti         ###   ########.fr       */
+/*   Created: 2024/02/19 09:46:44 by eny-fiti          #+#    #+#             */
+/*   Updated: 2024/02/27 17:02:16 by eny-fiti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	char			*s;
-	char			*d;
+	int				leng;
 
 	i = 0;
-	if (dest == (void *)0 && src == (void *)0)
-		return (dest);
-	s = (char *)src;
-	d = (char *)dest;
-	if (n == 0)
-		return (d);
-	while (i < n)
+	leng = ft_strlen(src);
+	if (size <= 0)
+		return (leng);
+	while (src[i] && (i < size - 1))
 	{
-		d[i] = s[i];
+		dest[i] = src[i];
 		i++;
 	}
-	return (d);
+	dest[i] = '\0';
+	return (leng);
 }
